@@ -1,20 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Modelo;
 
-/**
- *
- * @author getuliovb
- */
 public class Carros {
     
     protected String placa = "";
     protected String modelo = "";
     protected String cor = "";
     protected String observacao = "";
+    protected float horaEntrada = 0;
 
     
     //Construtor

@@ -14,8 +14,6 @@ import java.util.ArrayList;
  */
 public class Estacionamento {
     
-    protected int quantidadeCarros = 0;
-    
     ArrayList<Carros> listaCarros;
 
     public Estacionamento() {
@@ -24,14 +22,32 @@ public class Estacionamento {
        
     public void inserirCarro(Carros carro) {
         listaCarros.add(carro);
-        System.out.println(listaCarros.size());
-        System.out.println(listaCarros.get(quantidadeCarros).getPlaca());
-        quantidadeCarros ++;
+        mostrarDetalhesDoCarro(carro);
+    }
+    
+    public void mostrarDetalhesDoCarro(Carros carro) {
+        System.out.println("Placa: " + carro.getPlaca());
+        System.out.println("Modelo: " + carro.getModelo());
+        System.out.println("Cor: " + carro.getCor());
+        System.out.println("Observacao: " + carro.getObservacao());
+      
     }
  
     public void removerCarro(Carros carro) {
-        if(quantidadeCarros == 0) { System.out.println("Não há carros!"); }
+        if(listaCarros.isEmpty()) { System.out.println("Não há carros!"); }
         else if(listaCarros.contains(carro)){ listaCarros.remove(carro); }
         else { System.out.println("Carro não está presente!"); }    
+    }
+
+    public Carros pesquisarPorPlaca(String placa) {
+        for(int i = 0; i < listaCarros.size(); i++) {
+            System.out.println("Comparei: " + listaCarros.get(i).getPlaca() + " e " + placa);
+            if(listaCarros.get(i).getPlaca().equals(placa)) {
+                System.out.println("ACHEI!");                
+                return listaCarros.get(i);                
+            }
+        }
+        System.out.println("Placa não encontrada!");
+        return null;
     }
 }   
