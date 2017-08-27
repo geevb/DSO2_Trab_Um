@@ -59,7 +59,7 @@
                           <Group type="102" attributes="0">
                               <Component id="jTextFieldBuscar" min="-2" pref="196" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" pref="89" max="-2" attributes="0"/>
+                              <Component id="jButtonBuscar" min="-2" pref="89" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" pref="297" max="-2" attributes="0"/>
@@ -79,7 +79,7 @@
                       <Component id="jLabel5" max="32767" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonBuscar" min="-2" max="-2" attributes="0"/>
                           <Component id="jTextFieldBuscar" min="-2" pref="45" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -135,6 +135,7 @@
     <Component class="javax.swing.JButton" name="jButtonRegSaida">
       <Properties>
         <Property name="text" type="java.lang.String" value="Registrar Sa&#xed;da"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonRegSaidaActionPerformed"/>
@@ -207,12 +208,12 @@
         <Property name="text" type="java.lang.String" value="Pesquisar Placa:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="jButtonBuscar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Buscar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonBuscarActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

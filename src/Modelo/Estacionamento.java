@@ -6,6 +6,7 @@
 package Modelo;
 import Modelo.Carros;
 import Modelo.Sistema;
+import Controle.Controlador;
 import java.util.ArrayList;
 
 /**
@@ -15,6 +16,8 @@ import java.util.ArrayList;
 public class Estacionamento {
     
     ArrayList<Carros> listaCarros;
+    Controlador controle;
+    Carros carroPesquisado;
 
     public Estacionamento() {
         this.listaCarros = new ArrayList<>();
@@ -35,8 +38,11 @@ public class Estacionamento {
  
     public void removerCarro(Carros carro) {
         if(listaCarros.isEmpty()) { System.out.println("Não há carros!"); }
-        else if(listaCarros.contains(carro)){ listaCarros.remove(carro); }
-        else { System.out.println("Carro não está presente!"); }    
+        else if(listaCarros.contains(carro)){ 
+            listaCarros.remove(carro); //controle.calcularPreco(carro);
+        }        
+        else { System.out.println("Carro não está presente!"); }
+        System.out.println("Quantidade de Carros: " + listaCarros.size());
     }
 
     public Carros pesquisarPorPlaca(String placa) {
@@ -50,4 +56,13 @@ public class Estacionamento {
         System.out.println("Placa não encontrada!");
         return null;
     }
+    
+    public Carros getCarroPesquisa(){
+        return carroPesquisado;
+    }
+    
+    public void setCarroPesquisa(Carros carro){
+        carroPesquisado = carro;
+    }
+    
 }   

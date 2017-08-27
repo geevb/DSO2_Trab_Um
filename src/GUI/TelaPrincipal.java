@@ -44,7 +44,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jTextFieldBuscar = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jButtonBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,6 +56,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         jButtonRegSaida.setText("Registrar Saída");
+        jButtonRegSaida.setEnabled(false);
         jButtonRegSaida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonRegSaidaActionPerformed(evt);
@@ -91,10 +92,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         jLabel5.setText("Pesquisar Placa:");
 
-        jButton1.setText("Buscar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonBuscar.setText("Buscar");
+        jButtonBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonBuscarActionPerformed(evt);
             }
         });
 
@@ -132,7 +133,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jTextFieldBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jButtonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel5)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
@@ -146,7 +147,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton1)
+                            .addComponent(jButtonBuscar)
                             .addComponent(jTextFieldBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -200,12 +201,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonRegEntradaActionPerformed
 
     private void jButtonRegSaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegSaidaActionPerformed
+        controle.removerCarro(controle.retornarCarroDaPesquisa());
         //controle.removerCarro(carro);
+        //jButtonRegSaida.setEnabled(false);
     }//GEN-LAST:event_jButtonRegSaidaActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
         controle.efetuarPesquisa(jTextFieldBuscar.getText());
-    }//GEN-LAST:event_jButton1ActionPerformed
+        jTextFieldBuscar.setText("");
+        // TODO Verificar se encontrou e então liberar registrar saída. 
+        
+        jButtonRegSaida.setEnabled(true);
+    }//GEN-LAST:event_jButtonBuscarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -213,7 +220,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField TextFieldModelo;
     private javax.swing.JTextField TextFieldObservacao;
     private javax.swing.JTextField TextFieldPlaca;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonBuscar;
     private javax.swing.JButton jButtonRegEntrada;
     private javax.swing.JButton jButtonRegSaida;
     private javax.swing.JLabel jLabel1;

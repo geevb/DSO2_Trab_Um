@@ -20,7 +20,7 @@ public class Controlador {
     Carros car;
     Mensagens msg;
     
-    
+    //public Controlador(){};
     
     public Controlador(){
     this.car = new Carros();
@@ -51,7 +51,7 @@ public class Controlador {
     }
 
     public void efetuarPesquisa(String placa) {
-        estacionamento.pesquisarPorPlaca(placa);
+        estacionamento.setCarroPesquisa(estacionamento.pesquisarPorPlaca(placa));
     }
     
     public void efetuarConfiguracao(String PeriodoAd, String PeriodoIni,
@@ -82,4 +82,16 @@ public class Controlador {
     }
     
     public boolean verificarCamposPesquisa(String campo1){ return true; }
+
+    public Carros retornarCarroDaPesquisa() {
+        return estacionamento.getCarroPesquisa();
+    }
+
+    public void calcularPreco(Carros carro) {
+        sis.calcularValorTotal(carro);
+    }
+
+    public void mensagemPlacaNaoEncontrada() {
+        msg.placaNaoEncontrada();
+    }
 }

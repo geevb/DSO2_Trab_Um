@@ -14,6 +14,10 @@ public class Mensagens {
         JOptionPane.showMessageDialog(null,"Campo " + "'" + campo + 
                 "'" + " é obrigatório!");
     }
+
+    public void placaNaoEncontrada() {
+        JOptionPane.showMessageDialog(null, "Placa não encontrada!");
+    }
     
     
 }

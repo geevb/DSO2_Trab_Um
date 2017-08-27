@@ -7,7 +7,7 @@ public class Carros {
     protected String modelo = "";
     protected String cor = "";
     protected String observacao = "";
-    protected float horaEntrada = 0;
+    protected int horaEntrada = 0;
 
     
     //Construtor
@@ -39,4 +39,8 @@ public class Carros {
     public String getObservacao() {
         return observacao;
     }    
+
+    int getTempoEntrada() {
+        return horaEntrada;
+    }
 }

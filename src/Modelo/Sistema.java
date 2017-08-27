@@ -8,8 +8,26 @@ public class Sistema {
     protected int periodoInicial;
     protected int periodoAdicional;
     protected int tolerancia;
+    protected int tempoAtual;
     
-    
+     public float calcularValorTotal(Carros carro) {
+        float valorTotal = 0;
+        int tempoEntrada = carro.getTempoEntrada();
+        int tempoUtilizado = tempoAtual - tempoEntrada;
+        
+        if(tempoUtilizado <= tolerancia){
+            return valorTotal;
+        } else if ( tempoUtilizado <= periodoInicial ) {
+            valorTotal = valorInicial;
+            return valorTotal;
+        } else {
+            //valorTotal = valorInicial + (valorAdicional*)
+        }
+        
+        
+        
+        return valorTotal;
+     }
     
     
     
@@ -33,4 +51,6 @@ public class Sistema {
     public void setTolerancia(int tolerancia) {
         this.tolerancia = tolerancia;
     }    
+
+   
 }
