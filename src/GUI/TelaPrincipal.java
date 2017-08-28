@@ -199,14 +199,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TextFieldModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldModeloActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldModeloActionPerformed
-
-    private void TextFieldPlacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldPlacaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldPlacaActionPerformed
-
     private void jButtonRegEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegEntradaActionPerformed
         controle.verificarCamposCadastro(TextFieldPlaca.getText());
         controle.enviarCarro(TextFieldPlaca.getText(), TextFieldModelo.getText(),
@@ -229,16 +221,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jButtonRegSaida.setEnabled(controle.efetuarPesquisa(jTextFieldBuscar.getText()));
         jTextFieldBuscar.setText("");
     }//GEN-LAST:event_jButtonBuscarActionPerformed
-
-    private void jLabel1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jLabel1PropertyChange
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel1PropertyChange
-
-    private void jTextFieldBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBuscarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldBuscarActionPerformed
-
-
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField TextFieldCor;
     private javax.swing.JTextField TextFieldModelo;
