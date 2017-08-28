@@ -136,10 +136,6 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextFieldValInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldValInicialActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldValInicialActionPerformed
-
     private void jButtonAvancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAvancarActionPerformed
         //Verificar campos e apenas proceder caso todos tenham sido preenchidos
         if (controle.efetuarConfiguracao(jTextFieldPerAdicional.getText(),
