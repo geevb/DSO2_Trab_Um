@@ -15,10 +15,10 @@ import Modelo.Estacionamento;
 
 
 public class Controlador {
-    Sistema sis;
-    Estacionamento estacionamento;
-    Carros car;
-    Mensagens msg;
+    protected Sistema sis;
+    protected Estacionamento estacionamento;
+    protected Carros car;
+    protected Mensagens msg;
     
     //public Controlador(){};
     
@@ -42,26 +42,47 @@ public class Controlador {
     }
     
     public void enviarCarro(String placa, String modelo, String cor, String observacao){
-        //Carros carro = car.criarCarro(placa, modelo, cor, observacao);
-        estacionamento.inserirCarro(car.criarCarro(placa, modelo, cor, observacao));
+        if(verificarCamposCadastro(placa)) { 
+            msg.placaEhObrigatorio(); 
+        }
+        else {
+            estacionamento.inserirCarro(car.criarCarro(placa, modelo, cor, observacao));
+        }
     }
     
     public void removerCarro(Carros carro){
         estacionamento.removerCarro(carro);
+        //float valorTotal = sis.calcularValorTotal(carro);
+        //msg.mostrarValorTotal(valorTotal);
     }
 
-    public void efetuarPesquisa(String placa) {
-        estacionamento.setCarroPesquisa(estacionamento.pesquisarPorPlaca(placa));
+    public boolean efetuarPesquisa(String placa) {
+        if (placa.equals("")) {
+            msg.placaEhObrigatorio(); 
+            return false;
+        }
+        else if (estacionamento.pesquisarPorPlaca(placa) == null) {            
+            msg.placaNaoEncontrada();
+            return false;
+        } else {
+            return true;
+        }
     }
     
-    public void efetuarConfiguracao(String PeriodoAd, String PeriodoIni,
-            String Tolerancia, String VlAdi, String VlIni) {
+    public boolean efetuarConfiguracao(String PeriodoAd, String PeriodoIni,
+            String Tolerancia, String VlAdi, String VlIni) { 
         
-        sis.setPeriodoAdicional(Integer.parseInt(PeriodoAd));
-        sis.setPeriodoInicial(Integer.parseInt(PeriodoIni));
-        sis.setTolerancia(Integer.parseInt(Tolerancia));
-        sis.setValorAdicional(Float.parseFloat(VlAdi));
-        sis.setValorInicial(Float.parseFloat(VlIni));
+        if (verificarCamposConfiguracao(PeriodoAd, PeriodoIni, Tolerancia, 
+                VlAdi, VlIni)){            
+            sis.setPeriodoAdicional(Integer.parseInt(PeriodoAd));
+            sis.setPeriodoInicial(Integer.parseInt(PeriodoIni));
+            sis.setTolerancia(Integer.parseInt(Tolerancia));
+            sis.setValorAdicional(Float.parseFloat(VlAdi));
+            sis.setValorInicial(Float.parseFloat(VlIni));
+            return true;            
+        } else {
+            return false;
+        }       
     }
     
     public boolean verificarCamposConfiguracao(String PerAd, String PerIni, 
@@ -72,13 +93,12 @@ public class Controlador {
         if(Tolerancia.equals("")){ msg.mostrarCampoObrigatorio("Tolerância"); return false; }
         if(ValAd.equals("")){ msg.mostrarCampoObrigatorio("Valor Adicional"); return false; }
         if(ValIni.equals("")){ msg.mostrarCampoObrigatorio("Valor Inicial"); return false; }
-        return true;       
+        
+        return true;        
     }
     
-    public boolean verificarCamposCadastro(String campo1, String campo2, String campo3,
-            String campo4, String campo5 ) {
-    
-        return true;
+    public boolean verificarCamposCadastro(String placa) {
+        if (placa.equals("")){ return true; } else { return false; }
     }
     
     public boolean verificarCamposPesquisa(String campo1){ return true; }

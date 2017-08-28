@@ -141,18 +141,14 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldValInicialActionPerformed
 
     private void jButtonAvancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAvancarActionPerformed
-        if(controle.verificarCamposConfiguracao(jTextFieldPerAdicional.getText(),
+        //Verificar campos e apenas proceder caso todos tenham sido preenchidos
+        if (controle.efetuarConfiguracao(jTextFieldPerAdicional.getText(),
             jTextFieldPerInicial.getText(),jTextFieldTolerancia.getText(),
             jTextFieldValAdicional.getText(), jTextFieldValInicial.getText())) 
-        {
-            controle.efetuarConfiguracao(jTextFieldPerAdicional.getText(),
-            jTextFieldPerInicial.getText(),jTextFieldTolerancia.getText(),
-            jTextFieldValAdicional.getText(), jTextFieldValInicial.getText());
-            
+        {           
             new TelaPrincipal().setVisible(true);
             setVisible(false);
         }
-               
     }//GEN-LAST:event_jButtonAvancarActionPerformed
 
 

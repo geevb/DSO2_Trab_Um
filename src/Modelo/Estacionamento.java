@@ -15,9 +15,9 @@ import java.util.ArrayList;
  */
 public class Estacionamento {
     
-    ArrayList<Carros> listaCarros;
-    Controlador controle;
-    Carros carroPesquisado;
+    protected ArrayList<Carros> listaCarros;
+    protected Controlador controle;
+    protected Carros carroPesquisado;
 
     public Estacionamento() {
         this.listaCarros = new ArrayList<>();
@@ -29,17 +29,18 @@ public class Estacionamento {
     }
     
     public void mostrarDetalhesDoCarro(Carros carro) {
-        System.out.println("Placa: " + carro.getPlaca());
-        System.out.println("Modelo: " + carro.getModelo());
-        System.out.println("Cor: " + carro.getCor());
-        System.out.println("Observacao: " + carro.getObservacao());
-      
+        System.out.println("Placa: " + carro.getPlaca() + " Modelo: " + carro.getModelo());
+        System.out.println("Cor: " + carro.getCor() + " Observacao: " + carro.getObservacao());
     }
  
     public void removerCarro(Carros carro) {
         if(listaCarros.isEmpty()) { System.out.println("Não há carros!"); }
-        else if(listaCarros.contains(carro)){ 
-            listaCarros.remove(carro); //controle.calcularPreco(carro);
+        else if(listaCarros.contains(carro)){
+            System.out.println("CR - Placa: " + carro.getPlaca());
+            System.out.println("CR - Modelo: " + carro.getModelo());
+            System.out.println("CR - Cor: " + carro.getCor());
+            System.out.println("CR - Observacao: " + carro.getObservacao());
+            listaCarros.remove(carro);
         }        
         else { System.out.println("Carro não está presente!"); }
         System.out.println("Quantidade de Carros: " + listaCarros.size());
@@ -49,11 +50,11 @@ public class Estacionamento {
         for(int i = 0; i < listaCarros.size(); i++) {
             System.out.println("Comparei: " + listaCarros.get(i).getPlaca() + " e " + placa);
             if(listaCarros.get(i).getPlaca().equals(placa)) {
-                System.out.println("ACHEI!");                
-                return listaCarros.get(i);                
+                System.out.println("ACHEI!");
+                setCarroPesquisa(listaCarros.get(i));
+                return listaCarros.get(i);
             }
         }
-        System.out.println("Placa não encontrada!");
         return null;
     }
     

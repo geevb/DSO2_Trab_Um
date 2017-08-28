@@ -19,5 +19,12 @@ public class Mensagens {
         JOptionPane.showMessageDialog(null, "Placa não encontrada!");
     }
     
+    public void mostrarValorTotal(float valorTotal) {
+        JOptionPane.showMessageDialog(null, "Valor a ser pago: " + valorTotal);
+    }
+
+    public void placaEhObrigatorio() {
+        JOptionPane.showMessageDialog(null, "Favor informar a placa!");
+    }
     
 }
