@@ -12,7 +12,7 @@ public class Sistema {
     
      public float calcularValorTotal(Carros carro) {
         float valorTotal = 0;
-        int tempoEntrada = carro.getTempoEntrada();
+        int tempoEntrada = carro.getHoraEntrada();
         int tempoUtilizado = tempoAtual - tempoEntrada;
         
         if(tempoUtilizado <= tolerancia){

@@ -40,7 +40,7 @@ public class Carros {
         return observacao;
     }    
 
-    int getTempoEntrada() {
+    public int getHoraEntrada() {
         return horaEntrada;
     }
 }

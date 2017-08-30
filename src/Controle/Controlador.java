@@ -41,7 +41,7 @@ public class Controlador {
         });
     }
     
-    public void enviarCarro(String placa, String modelo, String cor, String observacao){
+    public void inserirCarroNoEstacionamento(String placa, String modelo, String cor, String observacao){
         if(verificarCamposCadastro(placa)) { 
             msg.placaEhObrigatorio(); 
         }
@@ -50,23 +50,27 @@ public class Controlador {
         }
     }
     
-    public void removerCarro(Carros carro){
+    public void removerCarroDoEstacionamento(Carros carro){
         estacionamento.removerCarro(carro);
         //float valorTotal = sis.calcularValorTotal(carro);
         //msg.mostrarValorTotal(valorTotal);
     }
 
-    public boolean efetuarPesquisa(String placa) {
-        if (placa.equals("")) {
+    public Carros efetuarPesquisaPelaPlaca(String placa) {
+        if (placa.equals("   -   ")) {
             msg.placaEhObrigatorio(); 
-            return false;
+            return null;
         }
         else if (estacionamento.pesquisarPorPlaca(placa) == null) {            
             msg.placaNaoEncontrada();
-            return false;
+            return null;
         } else {
-            return true;
+            return retornarCarroPesquisa();
         }
+    }
+    
+    public Carros retornarCarroPesquisa(){
+        return estacionamento.getCarroPesquisa();
     }
     
     public boolean efetuarConfiguracao(String PeriodoAd, String PeriodoIni,
@@ -98,7 +102,7 @@ public class Controlador {
     }
     
     public boolean verificarCamposCadastro(String placa) {
-        if (placa.equals("")){ return true; } else { return false; }
+        if (placa.equals("   -   ")){ return true; } else { return false; }
     }
     
     public boolean verificarCamposPesquisa(String campo1){ return true; }
