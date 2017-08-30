@@ -111,8 +111,8 @@ public class Controlador {
         return estacionamento.getCarroPesquisa();
     }
 
-    public void calcularPreco(Carros carro) {
-        sis.calcularValorTotal(carro);
+    public void calcularPreco(String horaAtual, String minutoAtual, Carros carro) {
+        sis.calcularValorTotal(horaAtual, minutoAtual, carro);
     }
 
     public void mensagemPlacaNaoEncontrada() {

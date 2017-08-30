@@ -46,6 +46,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabelInfoObs = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabelHoraEntrada = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jTextFieldHoraAtual = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jTextFieldMinutoAtual = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -162,6 +166,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jLabel8.setText("Horário Atual:");
+
+        jTextFieldHoraAtual.setText("00");
+
+        jLabel9.setText(":");
+
+        jTextFieldMinutoAtual.setText("00");
+        jTextFieldMinutoAtual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldMinutoAtualActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -174,25 +191,37 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addGap(236, 236, 236)
                         .addComponent(jButtonRegSaida, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(12, 12, 12)
-                                .addComponent(TextFieldPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(12, 12, 12)
+                                        .addComponent(TextFieldPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addGap(35, 35, 35)
+                                        .addComponent(TextFieldModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addGap(62, 62, 62)
+                                        .addComponent(TextFieldCor, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addGap(3, 3, 3)
+                                        .addComponent(TextFieldObservacao, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(35, 35, 35)
-                                .addComponent(TextFieldModelo, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(62, 62, 62)
-                                .addComponent(TextFieldCor, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
+                                .addContainerGap()
+                                .addComponent(jTextFieldHoraAtual, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(4, 4, 4)
+                                .addComponent(jLabel9)
                                 .addGap(3, 3, 3)
-                                .addComponent(TextFieldObservacao, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jTextFieldMinutoAtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(87, 87, 87)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -207,11 +236,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(73, 73, 73)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextFieldBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonBuscar))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jTextFieldBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonBuscar))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextFieldHoraAtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel9)
+                        .addComponent(jTextFieldMinutoAtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -270,6 +306,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jButtonRegSaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegSaidaActionPerformed
         controle.removerCarroDoEstacionamento(controle.retornarCarroDaPesquisa());
+        controle.calcularPreco(jTextFieldHoraAtual.getText(), 
+                jTextFieldMinutoAtual.getText(), controle.retornarCarroPesquisa());
         jButtonRegSaida.setEnabled(false);
         jLabelInfoCor.setText("");
         jLabelInfoMod.setText("");
@@ -286,7 +324,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             jTextFieldBuscar.setText("");                       
         }
     }//GEN-LAST:event_jButtonBuscarActionPerformed
-<<<<<<< HEAD
+
 
     private void jLabel1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jLabel1PropertyChange
         // TODO add your handling code here:
@@ -296,18 +334,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldBuscarActionPerformed
 
+    private void jTextFieldMinutoAtualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldMinutoAtualActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldMinutoAtualActionPerformed
+
     private void preencherResultadoPesquisa(Carros carro){
         jLabelInfoCor.setText("Cor: " + carro.getCor());
         jLabelInfoMod.setText("Modelo: " + carro.getModelo());
         jLabelInfoObs.setText("Obs: " + carro.getObservacao());
         jLabelInfoPlaca.setText("Placa: " + carro.getPlaca());
-        jLabelHoraEntrada.setText("Hora Entrada: " + carro.getHoraEntrada());
+        jLabelHoraEntrada.setText("Hora Entrada: " + carro.getHoraEntradaFormatada());
     }
 
-=======
-    
-    
->>>>>>> 0053741d2d3c61ae054e86f3a3640e84c9684489
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField TextFieldCor;
     private javax.swing.JTextField TextFieldModelo;
@@ -323,6 +361,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelHoraEntrada;
     private javax.swing.JLabel jLabelInfoCor;
     private javax.swing.JLabel jLabelInfoMod;
@@ -330,6 +370,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelInfoPlaca;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextFieldBuscar;
+    private javax.swing.JTextField jTextFieldHoraAtual;
+    private javax.swing.JTextField jTextFieldMinutoAtual;
     // End of variables declaration//GEN-END:variables
 }
 

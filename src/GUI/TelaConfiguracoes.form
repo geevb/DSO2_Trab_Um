@@ -66,7 +66,7 @@
                                   <Component id="jTextFieldValAdicional" min="-2" pref="161" max="-2" attributes="0"/>
                                   <Component id="jTextFieldPerAdicional" alignment="0" min="-2" pref="161" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="422" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -157,14 +157,8 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldValInicialActionPerformed"/>
       </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="try{&#xa;   javax.swing.text.MaskFormatter data = new javax.swing.text.MaskFormatter(&quot;##,##&quot;);&#xa;   jTextFieldValInicial = new javax.swing.JFormattedTextField(data);&#xa;}&#xa;   catch (Exception e){&#xa;}"/>
-      </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldValAdicional">
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="try{&#xa;   javax.swing.text.MaskFormatter data = new javax.swing.text.MaskFormatter(&quot;##,##&quot;);&#xa;   jTextFieldValAdicional = new javax.swing.JFormattedTextField(data);&#xa;}&#xa;   catch (Exception e){&#xa;}"/>
-      </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldPerInicial">
     </Component>

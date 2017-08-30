@@ -1,30 +1,35 @@
 
 package Modelo;
+import java.time.LocalTime;
 
 public class Sistema {
     
     protected float valorInicial;
     protected float valorAdicional;
-    protected int periodoInicial;
-    protected int periodoAdicional;
+    protected LocalTime periodoInicial;
+    protected LocalTime periodoAdicional;
     protected int tolerancia;
-    protected int tempoAtual;
     
-     public float calcularValorTotal(Carros carro) {
+    
+     public float calcularValorTotal(String horaAtual, String minutoAtual, Carros carro) {
         float valorTotal = 0;
-        int tempoEntrada = carro.getHoraEntrada();
-        int tempoUtilizado = tempoAtual - tempoEntrada;
+        LocalTime tempoAtual = LocalTime.of(Integer.parseInt(horaAtual), 
+                Integer.parseInt(minutoAtual));
+        LocalTime tempoUtilizado = carro.getHoraEntrada().minusHours(tempoAtual.getHour());
+        tempoUtilizado = tempoUtilizado.minusMinutes(tempoAtual.getMinute());
         
-        if(tempoUtilizado <= tolerancia){
+        if(tempoUtilizado.getHour() == 0 && tempoUtilizado.getMinute() <=  tolerancia){
+            System.out.println("DENTRO TOLERANCIA, VALOR: " + valorTotal);
             return valorTotal;
-        } else if ( tempoUtilizado <= periodoInicial ) {
+        } else if ( tempoUtilizado.getHour() <= periodoInicial.getHour()
+                && tempoUtilizado.getMinute() <= periodoInicial.getMinute()) {
             valorTotal = valorInicial;
+            System.out.println("DENTRO PERIODO INICIAL, Valor Total: " + valorTotal);
             return valorTotal;
         } else {
             //valorTotal = valorInicial + (valorAdicional*)
         }
-        
-        
+       
         
         return valorTotal;
      }
@@ -42,12 +47,14 @@ public class Sistema {
     public void setValorAdicional(float valorAdicional) {
         this.valorAdicional = valorAdicional;
     }
-    public void setPeriodoInicial(int periodoInicial) {
-        this.periodoInicial = periodoInicial;
+    public void setPeriodoInicial(int pPeriodoInicial) {
+        this.periodoInicial.of(0, pPeriodoInicial);
     }
-    public void setPeriodoAdicional(int periodoAdicional) {
-        this.periodoAdicional = periodoAdicional;
+    
+    public void setPeriodoAdicional(int pPeriodoAdicional) {
+       this.periodoAdicional.of(0, pPeriodoAdicional);
     }
+    
     public void setTolerancia(int tolerancia) {
         this.tolerancia = tolerancia;
     }    

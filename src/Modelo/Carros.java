@@ -1,21 +1,24 @@
 
 package Modelo;
 
+import java.time.LocalTime;
+
 public class Carros {
     
     protected String placa = "";
     protected String modelo = "";
     protected String cor = "";
     protected String observacao = "";
-    protected int horaEntrada = 0;
+    protected LocalTime horaEntrada; 
 
     
-    //Construtor
+    //Construtor COM tempo atual
     public Carros(String placa, String modelo, String cor, String observacao) {
         this.placa = placa;
         this.modelo = modelo;
         this.cor = cor;
         this.observacao = observacao;
+        this.horaEntrada = LocalTime.now();
     }
 
     public Carros(){}
@@ -25,8 +28,7 @@ public class Carros {
     }
     
     
-    
-    
+        
     public String getPlaca() {
         return placa;
     }
@@ -40,7 +42,12 @@ public class Carros {
         return observacao;
     }    
 
-    public int getHoraEntrada() {
+    public String getHoraEntradaFormatada(){
+        return horaEntrada.getHour() + ":" + horaEntrada.getMinute();
+    }
+    
+    public LocalTime getHoraEntrada() {
         return horaEntrada;
     }
+
 }

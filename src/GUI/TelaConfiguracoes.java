@@ -27,19 +27,7 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jTextFieldValInicial = new javax.swing.JTextField();
-        try{
-            javax.swing.text.MaskFormatter data = new javax.swing.text.MaskFormatter("##,##");
-            jTextFieldValInicial = new javax.swing.JFormattedTextField(data);
-        }
-        catch (Exception e){
-        }
         jTextFieldValAdicional = new javax.swing.JTextField();
-        try{
-            javax.swing.text.MaskFormatter data = new javax.swing.text.MaskFormatter("##,##");
-            jTextFieldValAdicional = new javax.swing.JFormattedTextField(data);
-        }
-        catch (Exception e){
-        }
         jTextFieldPerInicial = new javax.swing.JTextField();
         jTextFieldPerAdicional = new javax.swing.JTextField();
         jTextFieldTolerancia = new javax.swing.JTextField();
@@ -116,7 +104,7 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
                                     .addComponent(jTextFieldPerInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextFieldValAdicional, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextFieldPerAdicional, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addContainerGap(422, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addContainerGap())))
