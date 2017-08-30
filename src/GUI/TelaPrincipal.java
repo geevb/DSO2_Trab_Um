@@ -256,14 +256,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TextFieldModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldModeloActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldModeloActionPerformed
-
-    private void TextFieldPlacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldPlacaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldPlacaActionPerformed
-
     private void jButtonRegEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegEntradaActionPerformed
         controle.verificarCamposCadastro(TextFieldPlaca.getText());
         controle.inserirCarroNoEstacionamento(TextFieldPlaca.getText(), TextFieldModelo.getText(),
@@ -294,6 +286,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             jTextFieldBuscar.setText("");                       
         }
     }//GEN-LAST:event_jButtonBuscarActionPerformed
+<<<<<<< HEAD
 
     private void jLabel1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jLabel1PropertyChange
         // TODO add your handling code here:
@@ -311,6 +304,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabelHoraEntrada.setText("Hora Entrada: " + carro.getHoraEntrada());
     }
 
+=======
+    
+    
+>>>>>>> 0053741d2d3c61ae054e86f3a3640e84c9684489
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField TextFieldCor;
     private javax.swing.JTextField TextFieldModelo;
