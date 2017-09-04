@@ -35,6 +35,7 @@ public class Controlador {
     
     public void chamarTelaInicial() {
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new TelaInicial().setVisible(true);
             }

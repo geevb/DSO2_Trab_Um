@@ -5,8 +5,6 @@
  */
 package GUI;
 
-import GUI.ActionsTelaInicial;
-
 public class TelaInicial extends javax.swing.JFrame {
 
     public TelaInicial() {
