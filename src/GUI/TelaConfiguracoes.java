@@ -44,12 +44,14 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
 
         jLabel5.setText("Tolerância (Min.) :");
 
+        /*
         jTextFieldValInicial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldValInicialActionPerformed(evt);
             }
         });
-
+		*/
+		
         jTextFieldPerAdicional.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldPerAdicionalActionPerformed(evt);

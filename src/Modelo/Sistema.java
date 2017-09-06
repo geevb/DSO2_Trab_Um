@@ -20,13 +20,13 @@ public class Sistema {
         LocalTime timeHoraSaida = LocalTime.parse(horaSaida);
         // Convertendo o resultado da  conta para um número positivo
         int minutosPassados = (int) (Math.abs(timeHoraSaida.until(carro.getHoraEntrada(), MINUTES)));
-        System.out.println("Minutos passados: " + minutosPassados);
         
-        System.out.println("Vl Inicial: " + getValorInicial());
-        System.out.println("Vl Adicional: " + getValorAdicional());
-        System.out.println("Pr Inicial: " + getPeriodoInicial());
-        System.out.println("Pr Adicional: " + getPeriodoAdicional());
-        System.out.println("Tolerancia: " + getTolerancia());
+        System.out.println("Minutos passados: " + minutosPassados);
+//        System.out.println("Vl Inicial: " + getValorInicial());
+//        System.out.println("Vl Adicional: " + getValorAdicional());
+//        System.out.println("Pr Inicial: " + getPeriodoInicial());
+//        System.out.println("Pr Adicional: " + getPeriodoAdicional());
+//        System.out.println("Tolerancia: " + getTolerancia());
         
         if(minutosPassados <= tolerancia){ return valorTotal; }
         else if (minutosPassados <= periodoInicial){
@@ -34,12 +34,11 @@ public class Sistema {
             return valorTotal;
         }
         else {
-            //System.out.println("Vou Calcular: " + "(" + minutosPassados/60 + "-" + getPeriodoInicial()/60 + ")"  + "/" + getPeriodoAdicional()/60);
-	    
             // Fazer o cálculo(e arredondar para cima) para ver passou ao menos 1 minuto do tempo para considerar no cálculo
             int horasAlemPeriodo = (int) Math.ceil((double)minutosPassados / 60);
-            horasAlemPeriodo = (horasAlemPeriodo  - getPeriodoInicial()/60)/(getPeriodoAdicional()/60);
-            
+            System.out.println("horasAlemPeriodo: " + horasAlemPeriodo);
+            horasAlemPeriodo = 1 + (horasAlemPeriodo  - getPeriodoInicial()/60)/(getPeriodoAdicional()/60);
+             
             System.out.println("Valor Total será de: " + getValorInicial() + " + (" + horasAlemPeriodo+ "*" + getValorAdicional()+ ")");
             valorTotal = getValorInicial() + (horasAlemPeriodo*getValorAdicional());
 	    return valorTotal;

@@ -89,9 +89,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Lucida Sans", 0, 15)); // NOI18N
         jLabel4.setText("Observação:");
 
+
         TextFieldModelo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextFieldModeloActionPerformed(evt);
+                //TextFieldModeloActionPerformed(evt);
             }
         });
 
@@ -104,7 +105,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         TextFieldPlaca.setFont(new java.awt.Font("Ubuntu", 0, 36)); // NOI18N
         TextFieldPlaca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextFieldPlacaActionPerformed(evt);
+                //TextFieldPlacaActionPerformed(evt);
             }
         });
 

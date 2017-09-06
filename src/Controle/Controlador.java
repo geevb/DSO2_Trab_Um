@@ -90,6 +90,12 @@ public class Controlador {
             float valorAdicional = Float.parseFloat(VlAdi);
             float valorInicial = Float.parseFloat(VlIni);
             
+            System.out.println("Vl Inicial: " + valorInicial);
+            System.out.println("Vl Adicional: " + valorAdicional);
+            System.out.println("Pr Inicial: " + periodoInicial);
+            System.out.println("Pr Adicional: " + periodoAdicional);
+            System.out.println("Tolerancia: " + tolerancia);
+            
             sis.setPeriodoAdicional(periodoAdicional);
             sis.setPeriodoInicial(periodoInicial);
             sis.setTolerancia(tolerancia);
