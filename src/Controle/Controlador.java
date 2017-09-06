@@ -73,6 +73,14 @@ public class Controlador {
     public Carros retornarCarroPesquisa(){
         return estacionamento.getCarroPesquisa();
     }
+
+    public void msgCarroInserido(){
+	msg.msgCarroInserido();
+    }
+
+    public void msgCarroRemovido(){
+	msg.msgCarroRemovido();
+    }
     
     public boolean efetuarConfiguracao(String PeriodoAd, String PeriodoIni,
             String Tolerancia, String VlAdi, String VlIni) { 

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Modelo;
 import Modelo.Carros;
 import Modelo.Sistema;
@@ -26,6 +21,7 @@ public class Estacionamento {
     public void inserirCarro(Carros carro) {
         listaCarros.add(carro);
         mostrarDetalhesDoCarro(carro);
+	controle.msgCarroInserido();
     }
     
     public void mostrarDetalhesDoCarro(Carros carro) {
@@ -41,7 +37,7 @@ public class Estacionamento {
             System.out.println("CR - Cor: " + carro.getCor());
             System.out.println("CR - Observacao: " + carro.getObservacao());
             listaCarros.remove(carro);
-        }        
+        }
         else { System.out.println("Carro não está presente!"); }
         System.out.println("Quantidade de Carros: " + listaCarros.size());
     }

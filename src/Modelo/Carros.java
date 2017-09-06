@@ -12,12 +12,13 @@ public class Carros {
     protected LocalTime horaEntrada; 
 
     
-    //Construtor COM tempo atual
+    //Construtor COM tempo atual de entrada coletada do relógio do sistema.
     public Carros(String placa, String modelo, String cor, String observacao) {
         this.placa = placa;
         this.modelo = modelo;
         this.cor = cor;
         this.observacao = observacao;
+	//Pega a hora atual do sistema
         this.horaEntrada = LocalTime.now();
     }
 

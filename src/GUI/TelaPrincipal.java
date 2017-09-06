@@ -310,6 +310,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         TextFieldCor.setText("");
         TextFieldObservacao.setText("");
         TextFieldPlaca.setText("");
+	controle.msgCarroInserido();
     }//GEN-LAST:event_jButtonRegEntradaActionPerformed
 
     private void jButtonRegSaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegSaidaActionPerformed
@@ -321,15 +322,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabelInfoMod.setText("");
         jLabelInfoObs.setText("");
         jLabelInfoPlaca.setText("");
-        jLabelHoraEntrada.setText("");        
+        jLabelHoraEntrada.setText("");
+	controle.msgCarroRemovido();
     }//GEN-LAST:event_jButtonRegSaidaActionPerformed
 
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
         //Habilitar o botão de remover carro somente se a pesquisa retornar true
         if (controle.efetuarPesquisaPelaPlaca(jTextFieldBuscar.getText()) != null){
             jButtonRegSaida.setEnabled(true);
-            preencherResultadoPesquisa(controle.retornarCarroPesquisa()); 
-            jTextFieldBuscar.setText("");                       
+            preencherResultadoPesquisa(controle.retornarCarroPesquisa());
+            jTextFieldBuscar.setText("");
         }
     }//GEN-LAST:event_jButtonBuscarActionPerformed
 

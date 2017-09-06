@@ -23,6 +23,14 @@ public class Mensagens {
         JOptionPane.showMessageDialog(null, "Valor a ser pago: " + valorTotal);
     }
 
+    public void msgCarroInserido(){
+	JOptionPane.showMessageDialog(null, "Carro inserido com sucesso!");
+    }
+
+    public void msgCarroRemovido(){
+	JOptionPane.showMessageDialog(null, "Carro removido com sucesso!");
+    }
+
     public void placaEhObrigatorio() {
         JOptionPane.showMessageDialog(null, "Favor informar a placa!");
     }

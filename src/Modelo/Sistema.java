@@ -23,14 +23,14 @@ public class Sistema {
         System.out.println(minutosPassados);
 
         if(minutosPassados <= tolerancia){ return valorTotal; }
-        else if (minutosPassados <= periodoInicial){ 
+        else if (minutosPassados <= periodoInicial){
             valorTotal = valorInicial;
             return valorTotal;
         }
         else {
-            if (minutosPassados%60 > periodoAdicional%60)
-            valorTotal = periodoAdicional*valorAdicional;
-        
+	    int horasAlemPeriodo = (minutosPassados%60 - periodoInicial%60)%(periodoAdicional%60);
+            valorTotal = valorInicial + (horasAlemPeriodo*valorAdicional);
+	    return valorTotal;
         }
 
         return valorTotal;
