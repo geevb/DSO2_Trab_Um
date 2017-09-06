@@ -1,6 +1,6 @@
 
 package Modelo;
-import java.time.Duration;
+
 import java.time.LocalTime;
 import static java.time.temporal.ChronoUnit.MINUTES;
 

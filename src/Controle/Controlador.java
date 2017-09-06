@@ -1,12 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Controle;
+
 import GUI.TelaInicial;
-import GUI.TelaPrincipal;
-import GUI.TelaConfiguracoes;
 import GUI.Mensagens;
 import Modelo.Sistema;
 import Modelo.Carros;
@@ -20,8 +14,7 @@ public class Controlador {
     protected Carros car;
     protected Mensagens msg;
     
-    //public Controlador(){};
-    
+  
     public Controlador(){
     this.car = new Carros();
     this.estacionamento = new Estacionamento();
@@ -35,11 +28,6 @@ public class Controlador {
     
     public void chamarTelaInicial() {
         new TelaInicial(this).setVisible(true);
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            @Override
-//            public void run() {                
-//            }
-//        });
     }
     
     public void inserirCarroNoEstacionamento(String placa, String modelo, String cor, String observacao){
@@ -54,8 +42,6 @@ public class Controlador {
     
     public void removerCarroDoEstacionamento(Carros carro){
         estacionamento.removerCarro(carro);
-        //float valorTotal = sis.calcularValorTotal(carro);
-        //msg.mostrarValorTotal(valorTotal);
     }
 
     public Carros efetuarPesquisaPelaPlaca(String placa) {
@@ -120,11 +106,9 @@ public class Controlador {
     }
     
     public boolean verificarCamposCadastro(String placa) {
-        if (placa.equals("   -   ")){ return true; } else { return false; }
+        return placa.equals("   -   ");
     }
     
-    public boolean verificarCamposPesquisa(String campo1){ return true; }
-
     public Carros retornarCarroDaPesquisa() {
         return estacionamento.getCarroPesquisa();
     }

@@ -1,6 +1,4 @@
 package Modelo;
-import Modelo.Carros;
-import Modelo.Sistema;
 import Controle.Controlador;
 import java.util.ArrayList;
 
