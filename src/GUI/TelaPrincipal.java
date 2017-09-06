@@ -315,8 +315,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jButtonRegSaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegSaidaActionPerformed
         controle.removerCarroDoEstacionamento(controle.retornarCarroDaPesquisa());
-        controle.calcularPreco(jTextFieldHoraAtual.getText(), 
-                jTextFieldMinutoAtual.getText(), controle.retornarCarroPesquisa());
+	//Mostrar Valor total do resultado do cálculo de preco do último carro pesquisado.
+        controle.mostrarValorTotal(controle.calcularPreco(jTextFieldHoraAtual.getText(), 
+                jTextFieldMinutoAtual.getText(), controle.retornarCarroPesquisa()));
         jButtonRegSaida.setEnabled(false);
         jLabelInfoCor.setText("");
         jLabelInfoMod.setText("");
@@ -327,7 +328,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonRegSaidaActionPerformed
 
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
-        //Habilitar o botão de remover carro somente se a pesquisa retornar true
+        //Habilitar o botão de remover carro somente se a pesquisa pela placa retornar diferente de nulo.
         if (controle.efetuarPesquisaPelaPlaca(jTextFieldBuscar.getText()) != null){
             jButtonRegSaida.setEnabled(true);
             preencherResultadoPesquisa(controle.retornarCarroPesquisa());

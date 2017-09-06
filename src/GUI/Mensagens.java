@@ -34,5 +34,11 @@ public class Mensagens {
     public void placaEhObrigatorio() {
         JOptionPane.showMessageDialog(null, "Favor informar a placa!");
     }
+
+    public void mostrarValorTotal(float valorTotal){
+	JOptionPane.showMessageDialog(null, "Valor a pagar: R$" + String.valueOf(valorTotal);
+    }
+
+
     
 }

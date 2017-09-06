@@ -81,6 +81,10 @@ public class Controlador {
     public void msgCarroRemovido(){
 	msg.msgCarroRemovido();
     }
+
+    public void mostrarValorTotal(float valorTotal){
+	msg.mostrarValorTotal(valorTotal);
+    }
     
     public boolean efetuarConfiguracao(String PeriodoAd, String PeriodoIni,
             String Tolerancia, String VlAdi, String VlIni) { 
@@ -120,8 +124,8 @@ public class Controlador {
         return estacionamento.getCarroPesquisa();
     }
 
-    public void calcularPreco(String horaAtual, String minutoAtual, Carros carro) {
-        sis.calcularValorTotal(horaAtual, minutoAtual, carro);
+    public float calcularPreco(String horaAtual, String minutoAtual, Carros carro) {
+        return sis.calcularValorTotal(horaAtual, minutoAtual, carro);
     }
 
     public void mensagemPlacaNaoEncontrada() {
