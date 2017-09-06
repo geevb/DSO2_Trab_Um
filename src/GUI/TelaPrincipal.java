@@ -9,9 +9,10 @@ import Modelo.Carros;
 
 public class TelaPrincipal extends javax.swing.JFrame {
     
-    Controlador controle = new Controlador();
+    Controlador controle;
 
-    public TelaPrincipal() {
+    public TelaPrincipal(Controlador controle) {
+        this.controle = controle;
         initComponents();
     }
 
@@ -310,7 +311,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         TextFieldCor.setText("");
         TextFieldObservacao.setText("");
         TextFieldPlaca.setText("");
-	controle.msgCarroInserido();
     }//GEN-LAST:event_jButtonRegEntradaActionPerformed
 
     private void jButtonRegSaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegSaidaActionPerformed
@@ -324,7 +324,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabelInfoObs.setText("");
         jLabelInfoPlaca.setText("");
         jLabelHoraEntrada.setText("");
-	controle.msgCarroRemovido();
     }//GEN-LAST:event_jButtonRegSaidaActionPerformed
 
     private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed

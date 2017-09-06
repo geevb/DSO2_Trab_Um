@@ -1,19 +1,14 @@
 package GUI;
 
-import Modelo.Sistema;
 import Controle.Controlador;
-import GUI.Mensagens;
 
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 public class TelaConfiguracoes extends javax.swing.JFrame {
 
-    Controlador controle = new Controlador();
-    public TelaConfiguracoes() {
+    Controlador controle;
+    
+    public TelaConfiguracoes(Controlador controle) {
+        this.controle = controle;
         initComponents();
     }
 
@@ -153,7 +148,7 @@ public class TelaConfiguracoes extends javax.swing.JFrame {
             jTextFieldPerInicial.getText(),jTextFieldTolerancia.getText(),
             jTextFieldValAdicional.getText(), jTextFieldValInicial.getText())) 
         {           
-            new TelaPrincipal().setVisible(true);
+            new TelaPrincipal(controle).setVisible(true);
             setVisible(false);
         }
     }//GEN-LAST:event_jButtonAvancarActionPerformed

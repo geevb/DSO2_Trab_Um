@@ -21,7 +21,6 @@ public class Estacionamento {
     public void inserirCarro(Carros carro) {
         listaCarros.add(carro);
         mostrarDetalhesDoCarro(carro);
-	controle.msgCarroInserido();
     }
     
     public void mostrarDetalhesDoCarro(Carros carro) {
@@ -32,10 +31,6 @@ public class Estacionamento {
     public void removerCarro(Carros carro) {
         if(listaCarros.isEmpty()) { System.out.println("Não há carros!"); }
         else if(listaCarros.contains(carro)){
-            System.out.println("CR - Placa: " + carro.getPlaca());
-            System.out.println("CR - Modelo: " + carro.getModelo());
-            System.out.println("CR - Cor: " + carro.getCor());
-            System.out.println("CR - Observacao: " + carro.getObservacao());
             listaCarros.remove(carro);
         }
         else { System.out.println("Carro não está presente!"); }
@@ -46,7 +41,6 @@ public class Estacionamento {
         for(int i = 0; i < listaCarros.size(); i++) {
             System.out.println("Comparei: " + listaCarros.get(i).getPlaca() + " e " + placa);
             if(listaCarros.get(i).getPlaca().equals(placa)) {
-                System.out.println("ACHEI!");
                 setCarroPesquisa(listaCarros.get(i));
                 return listaCarros.get(i);
             }

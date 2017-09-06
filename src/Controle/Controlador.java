@@ -34,12 +34,12 @@ public class Controlador {
     }
     
     public void chamarTelaInicial() {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new TelaInicial().setVisible(true);
-            }
-        });
+        new TelaInicial(this).setVisible(true);
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            @Override
+//            public void run() {                
+//            }
+//        });
     }
     
     public void inserirCarroNoEstacionamento(String placa, String modelo, String cor, String observacao){
@@ -48,6 +48,7 @@ public class Controlador {
         }
         else {
             estacionamento.inserirCarro(car.criarCarro(placa, modelo, cor, observacao));
+            msg.msgCarroInserido();
         }
     }
     
@@ -74,14 +75,6 @@ public class Controlador {
         return estacionamento.getCarroPesquisa();
     }
 
-    public void msgCarroInserido(){
-	msg.msgCarroInserido();
-    }
-
-    public void msgCarroRemovido(){
-	msg.msgCarroRemovido();
-    }
-
     public void mostrarValorTotal(float valorTotal){
 	msg.mostrarValorTotal(valorTotal);
     }
@@ -90,12 +83,18 @@ public class Controlador {
             String Tolerancia, String VlAdi, String VlIni) { 
         
         if (verificarCamposConfiguracao(PeriodoAd, PeriodoIni, Tolerancia, 
-                VlAdi, VlIni)){            
-            sis.setPeriodoAdicional(Integer.parseInt(PeriodoAd));
-            sis.setPeriodoInicial(Integer.parseInt(PeriodoIni));
-            sis.setTolerancia(Integer.parseInt(Tolerancia));
-            sis.setValorAdicional(Float.parseFloat(VlAdi));
-            sis.setValorInicial(Float.parseFloat(VlIni));
+                VlAdi, VlIni)){
+            int periodoAdicional = Integer.parseInt(PeriodoAd);
+            int periodoInicial = Integer.parseInt(PeriodoIni);
+            int tolerancia = Integer.parseInt(Tolerancia);
+            float valorAdicional = Float.parseFloat(VlAdi);
+            float valorInicial = Float.parseFloat(VlIni);
+            
+            sis.setPeriodoAdicional(periodoAdicional);
+            sis.setPeriodoInicial(periodoInicial);
+            sis.setTolerancia(tolerancia);
+            sis.setValorAdicional(valorAdicional);
+            sis.setValorInicial(valorInicial);
             return true;            
         } else {
             return false;

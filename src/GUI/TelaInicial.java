@@ -5,9 +5,13 @@
  */
 package GUI;
 
-public class TelaInicial extends javax.swing.JFrame {
+import Controle.Controlador;
 
-    public TelaInicial() {
+public class TelaInicial extends javax.swing.JFrame {
+    Controlador controle;
+    
+    public TelaInicial(Controlador controle) {
+        this.controle = controle;
         initComponents();
     }
 
@@ -60,8 +64,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new TelaConfiguracoes().setVisible(true);
-        //new TelaPrincipal().setVisible(true);
+        new TelaConfiguracoes(controle).setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 

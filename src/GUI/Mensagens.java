@@ -19,16 +19,8 @@ public class Mensagens {
         JOptionPane.showMessageDialog(null, "Placa não encontrada!");
     }
     
-    public void mostrarValorTotal(float valorTotal) {
-        JOptionPane.showMessageDialog(null, "Valor a ser pago: " + valorTotal);
-    }
-
     public void msgCarroInserido(){
 	JOptionPane.showMessageDialog(null, "Carro inserido com sucesso!");
-    }
-
-    public void msgCarroRemovido(){
-	JOptionPane.showMessageDialog(null, "Carro removido com sucesso!");
     }
 
     public void placaEhObrigatorio() {
@@ -36,7 +28,7 @@ public class Mensagens {
     }
 
     public void mostrarValorTotal(float valorTotal){
-	JOptionPane.showMessageDialog(null, "Valor a pagar: R$" + String.valueOf(valorTotal);
+	JOptionPane.showMessageDialog(null, "Carro removido com sucesso! \nValor a pagar: R$" + String.valueOf(valorTotal));
     }
 
 
